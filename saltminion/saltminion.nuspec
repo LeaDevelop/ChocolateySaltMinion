@@ -3,15 +3,15 @@
   <metadata>
     <id>saltminion</id>
     <title>Salt Minion</title>
-    <version>2016.3.3</version>
+    <version>2016.3.4</version>
     <authors>SaltStack</authors>
-    <owners>Derek Murawsky, Alex Clay</owners>
+    <owners>Derek Murawsky, Alex Clay, espoelstra</owners>
     <summary>Salt Minion Installer</summary>
     <description>
-	    This package installs a salt minion on your system as a windows service. The Salt minion receives commands from the central Salt master and replies with the results of said commands.
-    	Note that the Salt Minion Installer supports two arguments: /master=yoursaltmaster /minion-name=yourminionname.	These arguments can be passed to the package via the -installargs parameter.
-    	Versions with a dash (2014.7.5-2) aren't supported by chocolatey. Currently the install script doesn't work around that constraint.
-  	</description>
+        This package installs a salt minion on your system as a windows service. The Salt minion receives commands from the central Salt master and replies with the results of said commands. It can also be used in standalone mode to apply states to a machine without a master by using `C:\salt\salt-call.bat --local state.sls [yoursls]` or similar commands with `--local`.
+            Note that this package supports two arguments: /master=yoursaltmaster and /minion=yourminionname (note the installer itself uses /minion-name, but parsing dictionary keys with the `-` is painful).
+  These arguments can be passed to the package via the --params '/master=yoursaltmaster'. The custom salt master is recommended in most environments, the minion name is optional will default to the hostname if not supplied.
+    </description>
     <projectUrl>https://saltstack.com</projectUrl>
     <docsUrl>https://docs.saltstack.com/en/latest/</docsUrl>
     <mailingListUrl>https://groups.google.com/forum/#!forum/salt-users</mailingListUrl>
@@ -24,12 +24,13 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/barkingfoodog/ChocolateySaltMinion/7637618d3d3c498236573d111b9962effce916f1/saltminion/salt_icon.png</iconUrl>
     <releaseNotes>
+      * Supports /master and /minion parameters
       * Updated to latest version
       * Installer waits for the service to finish registering
-	  </releaseNotes>
-  	<dependencies>
-		  <dependency id="vcredist2008" version="9.0"/>
-	  </dependencies>
+    </releaseNotes>
+    <dependencies>
+          <dependency id="vcredist2008" version="9.0"/>
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
