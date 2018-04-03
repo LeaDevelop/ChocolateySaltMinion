@@ -1,10 +1,10 @@
 ﻿$packageName = 'saltminion'
 
 # Update these URLs and checksums when deploying a new version
-$url64 = 'https://repo.saltstack.com/windows/Salt-Minion-2017.7.5-Py2-AMD64-Setup.exe'
-$checksum64 = 'FB9A27009D600A7353C423D47D0C487F'
-$url = 'https://repo.saltstack.com/windows/Salt-Minion-2017.7.5-Py2-x86-Setup.exe'
-$checksum = 'FB9A27009D600A7353C423D47D0C487F'
+$url64 = 'https://repo.saltstack.com/windows/Salt-Minion-2018.3.0-Py2-AMD64-Setup.exe'
+$checksum64 = 'D516340D519B0DDC8A98502A1C1FE168'
+$url = 'https://repo.saltstack.com/windows/Salt-Minion-2018.3.0-Py2-x86-Setup.exe'
+$checksum = '09538BDA412DDC92A910C4BDF9FC474E'
 
 # Get arguments to download the file from the URLs and checksums above
 $packageArgs = @{
