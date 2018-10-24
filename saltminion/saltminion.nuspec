@@ -3,7 +3,7 @@
   <metadata>
     <id>saltminion</id>
     <title>Salt Minion</title>
-    <version>2017.7.8</version>
+    <version>2018.3.3</version>
     <authors>SaltStack</authors>
     <owners>Derek Murawsky, Alex Clay, espoelstra</owners>
     <summary>Salt Minion Installer</summary>
@@ -24,9 +24,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/barkingfoodog/ChocolateySaltMinion/7637618d3d3c498236573d111b9962effce916f1/saltminion/salt_icon.png</iconUrl>
     <releaseNotes>
-      * Supports /master and /minion parameters
       * Updated to latest version
-      * Installer waits for the service to finish registering
+      * Use Python 3
     </releaseNotes>
     <dependencies>
           <dependency id="vcredist2008" version="9.0"/>
