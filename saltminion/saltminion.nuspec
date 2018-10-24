@@ -3,7 +3,7 @@
   <metadata>
     <id>saltminion</id>
     <title>Salt Minion</title>
-    <version>2017.7.7</version>
+    <version>2017.7.8</version>
     <authors>SaltStack</authors>
     <owners>Derek Murawsky, Alex Clay, espoelstra</owners>
     <summary>Salt Minion Installer</summary>
