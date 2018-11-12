@@ -3,7 +3,7 @@
   <metadata>
     <id>saltminion</id>
     <title>Salt Minion</title>
-    <version>2018.3.3</version>
+    <version>2018.3.3.1</version>
     <authors>SaltStack</authors>
     <owners>Derek Murawsky, Alex Clay, espoelstra</owners>
     <summary>Salt Minion Installer</summary>
@@ -26,6 +26,7 @@
     <releaseNotes>
       * Updated to latest version
       * Use Python 3
+      * Rebuilt 2018-11-12 with updated checksums
     </releaseNotes>
     <dependencies>
           <dependency id="vcredist2008" version="9.0"/>
