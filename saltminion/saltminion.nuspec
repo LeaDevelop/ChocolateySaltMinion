@@ -3,14 +3,18 @@
   <metadata>
     <id>saltminion</id>
     <title>Salt Minion</title>
-    <version>2019.2.2</version>
+    <version>3000.0.0</version>
     <authors>SaltStack</authors>
-    <owners>Derek Murawsky, Alex Clay, espoelstra</owners>
+    <owners>Derek Murawsky, Alex Clay, espoelstra, Arthur REGNARD</owners>
     <summary>Salt Minion Installer</summary>
     <description>
-        This package installs a salt minion on your system as a windows service. The Salt minion receives commands from the central Salt master and replies with the results of said commands. It can also be used in standalone mode to apply states to a machine without a master by using `C:\salt\salt-call.bat --local state.sls [yoursls]` or similar commands with `--local`.
-            Note that this package supports two arguments: /master=yoursaltmaster and /minion=yourminionname (note the installer itself uses /minion-name, but parsing dictionary keys with the `-` is painful).
-  These arguments can be passed to the package via the --params '/master=yoursaltmaster'. The custom salt master is recommended in most environments, the minion name is optional will default to the hostname if not supplied.
+        This package installs a Salt-Minion on your system as a Windows service. The Salt-Minion receives commands from the central Salt-Master and replies with the results of said commands. It can also be used in standalone mode to apply states to a machine without a Salt-Master by using `C:\salt\salt-call.bat --local state.sls [yoursls]` or similar commands with `--local`.
+
+        Note that this package supports arguments:
+            - `/master=[master_name]`: A string value to set the IP address or hostname of the Salt-Master. Default value is 'salt'.
+            - `/minion=[minion_name]`: A string value to set the Salt-Minion name. Default value is hostname. (note the installer itself uses `/minion-name`, but parsing dictionary keys with the `-` is painful).
+            - `/norunning`: If present, did not start the Salt-Minion after installation.
+        These arguments can be passed to the package via the `--params '/master=myMaster /minion=myMinion /norunning'`.
     </description>
     <projectUrl>https://saltstack.com</projectUrl>
     <docsUrl>https://docs.saltstack.com/en/latest/</docsUrl>
@@ -28,9 +32,6 @@
       * Use Python 3
       * Rebuilt 2019-01-17 with updated checksums using the Python 3 installers
     </releaseNotes>
-    <dependencies>
-          <dependency id="vcredist2008" version="9.0"/>
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

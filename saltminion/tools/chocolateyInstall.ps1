@@ -21,12 +21,12 @@ $packageArgs = @{
 }
 
 $arguments = @{};
-# /master=myMaster /minion=myMinion
-$packageParameters = $env:chocolateyPackageParameters;
-$packageParameters
+
+$packageParameters = $env:chocolateyPackageParameters
 # Default the values
-$saltMaster = ''
+$masterName = ''
 $minionName = ''
+$minionRunning = 1
 
 # Now parse the packageParameters using good old regular expression
 if ($packageParameters) {
@@ -49,18 +49,23 @@ if ($packageParameters) {
     }
 
     if ($arguments.ContainsKey("master")) {
-        Write-Host "You specified a custom master address"
-        $saltMaster = $arguments['master']
-        $packageArgs['silentArgs'] += " /master=$saltMaster"
+        Write-Host "You specified a custom Salt-Master name"
+        $masterName = $arguments['master']
+        $packageArgs['silentArgs'] += " /master=$masterName"
     }
 
     if ($arguments.ContainsKey("minion")) {
-        Write-Host "You specified a custom minion ID"
+        Write-Host "You specified a custom Salt-Minion name"
         $minionName = $arguments['minion']
         $packageArgs['silentArgs'] += " /minion-name=$minionName"
+    }
+
+    if ($arguments.ContainsKey("norunning")) {
+        Write-Host "You want Additional Tools installed"
+        $minionRunning = 0
+        $packageArgs['silentArgs'] += " /start-minion=$minionRunning"
     }
 } else {
     Write-Debug "No Package Parameters Passed in, using defaults of /master=salt and /minion=$env:COMPUTERNAME"
 }
 install-ChocolateyPackage @packageArgs
-
