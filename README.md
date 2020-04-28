@@ -15,3 +15,8 @@ Chocolatey doesn't support dashes in a version. This may cause alternate version
 - 2015.5.0-2 might be 2015.5.0.2
 - 2014.7.5-2 might be 2014.7.5.2
 - etc
+
+Create the package and push
+===========================
+
+Read this documentation: https://chocolatey.org/docs/create-packages-quick-start#quick-start-guide
