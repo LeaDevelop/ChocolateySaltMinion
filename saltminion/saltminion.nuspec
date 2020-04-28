@@ -14,6 +14,7 @@
     <licenseUrl>https://github.com/saltstack/salt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/saltstack/salt</projectSourceUrl>
+    <packageSourceUrl>https://github.com/barkingfoodog/ChocolateySaltMinion</packageSourceUrl>
     <docsUrl>https://docs.saltstack.com/en/3000/contents.html</docsUrl>
     <mailingListUrl>https://groups.google.com/forum/#!forum/salt-users</mailingListUrl>
     <bugTrackerUrl>https://github.com/saltstack/salt/issues</bugTrackerUrl>
