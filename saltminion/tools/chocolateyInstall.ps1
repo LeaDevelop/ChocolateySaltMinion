@@ -1,71 +1,73 @@
-﻿$packageName = 'saltminion'
+﻿$ErrorActionPreference = 'Stop';
 
-# Update these URLs and checksums when deploying a new version
-$url64 = 'https://repo.saltstack.com/windows/Salt-Minion-2019.2.2-Py3-AMD64-Setup.exe'
-$checksum64 = 'C30E60057647DE6CF27E6181E1542ABD'
-$url = 'https://repo.saltstack.com/windows/Salt-Minion-2019.2.2-Py3-x86-Setup.exe'
-$checksum = 'DC1FD28A8CC3E72909E819D147D9211E'
+# Python 2
+$url_py2        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py2-x86-Setup.exe'
+$checksum_py2   = '41D79AC1A62EA17D4232C8F7885E4FA2'
+$url64_py2      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py2-AMD64-Setup.exe'
+$checksum64_py2 = '49E6D35E8F1FE843C8C3BE59C0A43FEF'
 
-# Get arguments to download the file from the URLs and checksums above
+# Python 3
+$url_py3        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py3-x86-Setup.exe'
+$checksum_py3   = '880E167E54E92FCCB6655D58700D78A6'
+$url64_py3      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py3-AMD64-Setup.exe'
+$checksum64_py3 = '31EE581C338AE6BFD090B3294FB138C4'
+
 $packageArgs = @{
-  packageName   = $packageName
-  fileType      = 'exe'
-  url           = $url
-  url64bit      = $url64
+  packageName     = 'salt-minion'
+  unzipLocation   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+  fileType        = 'EXE'
+
+  softwareName    = 'Salt*'
+
+  url             = $url_py3
+  checksum        = $checksum_py3
+  checksumType    = 'md5'
+
+  url64bit        = $url64_py3
+  checksum64      = $checksum64_py3
+  checksumType64  = 'md5'
+
   silentArgs    = "/S"
-  softwareName  = 'Salt*'
-  checksum      = $checksum
-  checksumType  = 'md5'
-  checksum64    = $checksum64
-  checksumType64= 'md5'
+  validExitCodes= @(0, 3010, 1641)
 }
 
-$arguments = @{};
 
-$packageParameters = $env:chocolateyPackageParameters
-# Default the values
-$masterName = ''
-$minionName = ''
-$minionRunning = 1
+$packageParameters = Get-PackageParameters
 
-# Now parse the packageParameters using good old regular expression
-if ($packageParameters) {
-    $match_pattern = "\/(?<option>([a-zA-Z]+))=(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
-    #"
-    $option_name = 'option'
-    $value_name = 'value'
+if ($packageParameters['Python2'] -eq 'true') {
+  $packageArgs['url']         = $url_py2
+  $packageArgs['checksum']    = $checksum_py2
 
-    if ($packageParameters -match $match_pattern ){
-        $results = $packageParameters | Select-String $match_pattern -AllMatches
-        $results.matches | % {
-          $arguments.Add(
-              $_.Groups[$option_name].Value.Trim(),
-              $_.Groups[$value_name].Value.Trim())
-      }
-    }
-    else
-    {
-      throw "Package Parameters were found but were invalid (REGEX Failure)"
-    }
-
-    if ($arguments.ContainsKey("master")) {
-        Write-Host "You specified a custom Salt-Master name"
-        $masterName = $arguments['master']
-        $packageArgs['silentArgs'] += " /master=$masterName"
-    }
-
-    if ($arguments.ContainsKey("minion")) {
-        Write-Host "You specified a custom Salt-Minion name"
-        $minionName = $arguments['minion']
-        $packageArgs['silentArgs'] += " /minion-name=$minionName"
-    }
-
-    if ($arguments.ContainsKey("norunning")) {
-        Write-Host "You want Additional Tools installed"
-        $minionRunning = 0
-        $packageArgs['silentArgs'] += " /start-minion=$minionRunning"
-    }
-} else {
-    Write-Debug "No Package Parameters Passed in, using defaults of /master=salt and /minion=$env:COMPUTERNAME"
+  $packageArgs['url64bit']    = $url64_py2
+  $packageArgs['checksum64']  = $checksum64_py2
 }
-install-ChocolateyPackage @packageArgs
+
+if ($packageParameters['Master']) {
+  $Master = $packageParameters['Master']
+  $packageArgs['silentArgs'] += " /master=$Master"
+}
+
+if ($packageParameters['MinionName']) {
+  $MinionName = $packageParameters['MinionName']
+  $packageArgs['silentArgs'] += " /minion-name=$MinionName"
+}
+
+if ($packageParameters['MinionStart']) {
+  $MinionStart = $packageParameters['MinionStart']
+  $packageArgs['silentArgs'] += " /start-minion=$MinionStart"
+}
+
+if ($packageParameters['MinionStartDelayed'] -eq 'true') {
+  $packageArgs['silentArgs'] += " /start-minion-delayed"
+}
+
+if ($packageParameters['DefaultConfig'] -eq 'true') {
+  $packageArgs['silentArgs'] += " /default-config"
+}
+
+if ($packageParameters['CustomConfig']) {
+  $CustomConfig = $packageParameters['CustomConfig']
+  $packageArgs['silentArgs'] += " /custom-config=$CustomConfig"
+}
+
+Install-ChocolateyPackage @packageArgs
