@@ -1,16 +1,16 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 # Python 2
-$url_py2        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py2-x86-Setup.exe'
-$checksum_py2   = '41D79AC1A62EA17D4232C8F7885E4FA2'
-$url64_py2      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py2-AMD64-Setup.exe'
-$checksum64_py2 = '49E6D35E8F1FE843C8C3BE59C0A43FEF'
+$url_py2        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.2-Py2-x86-Setup.exe'
+$checksum_py2   = '2BD34BF9A5163FFE77187E14F0EE5DFE'
+$url64_py2      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.2-Py2-AMD64-Setup.exe'
+$checksum64_py2 = '74270B8CCCE73289E1673D666B0C0510'
 
 # Python 3
-$url_py3        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py3-x86-Setup.exe'
-$checksum_py3   = '880E167E54E92FCCB6655D58700D78A6'
-$url64_py3      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.1-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '31EE581C338AE6BFD090B3294FB138C4'
+$url_py3        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.2-Py3-x86-Setup.exe'
+$checksum_py3   = 'F073E3B750E871978AFDCF8725B2AB39'
+$url64_py3      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.2-Py3-AMD64-Setup.exe'
+$checksum64_py3 = 'A22646DBC963C9240EAB133180969CE6'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
