@@ -3,14 +3,14 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>saltminion</id>
-    <version>3000.1.0</version>
+    <version>3000.2.0</version>
     <owners>Derek Murawsky, Alex Clay, espoelstra, ArthurREGNARD</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>Salt Minion (Install)</title>
     <authors>SaltStack</authors>
     <projectUrl>https://www.saltstack.com/</projectUrl>
-    <iconUrl>https://github.com/saltstack/salt/blob/master/doc/_static/salt-logo.png</iconUrl>
+    <iconUrl>https://github.com/saltstack/salt/raw/master/doc/_static/favicon.ico</iconUrl>
     <licenseUrl>https://github.com/saltstack/salt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/saltstack/salt</projectSourceUrl>
@@ -45,7 +45,7 @@ For more details on _original installer values_ : https://docs.saltstack.com/en/
 To pass parameters, use `--params "''"` (e.g. `choco install salt-minion [other options] --params="'/Master:myMaster /Python2'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
     </description>
-    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3000.1.html</releaseNotes>
+    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3000.2.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
