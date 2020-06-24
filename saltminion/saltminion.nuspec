@@ -3,7 +3,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>saltminion</id>
-    <version>3000.3.0</version>
+    <version>3001.0.0</version>
     <owners>Derek Murawsky, Alex Clay, espoelstra, ArthurREGNARD</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
@@ -15,7 +15,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/saltstack/salt</projectSourceUrl>
     <packageSourceUrl>https://github.com/barkingfoodog/ChocolateySaltMinion</packageSourceUrl>
-    <docsUrl>https://docs.saltstack.com/en/3000/contents.html</docsUrl>
+    <docsUrl>https://docs.saltstack.com/en/3001/contents.html</docsUrl>
     <mailingListUrl>https://groups.google.com/forum/#!forum/salt-users</mailingListUrl>
     <bugTrackerUrl>https://github.com/saltstack/salt/issues</bugTrackerUrl>
     <tags>salt-minion saltminion salt saltstack minion admin</tags>
@@ -32,7 +32,7 @@ The `Salt-Minion` needs the `Salt-Master` to run correctly.
 # Package Parameters
 The following package parameters can be set:
 
-  * `/Python2`                    - Present to install with python2.
+  * `/Python2`                    - No longer supported by SaltStack. Will be removed in future version of the package. 
   * `/Master:[master]`            - A string value to set the IP address or hostname of the Salt-Master. _original installer value: `/master=`_
   * `/MinionName:[minion-name]`   - A string value to set the Salt-Minion name. _original installer value: `/minion-name=`_
   * `/MinionStart:[minion-start]` - 1 to start the service, else 0. _original installer value: `/start-minion=`_
@@ -40,12 +40,12 @@ The following package parameters can be set:
   * `/DefaultConfig`              - Present to overwrite the existing config file with the default. _original installer value: `/default-config`_
   * `/CustomConfig:[config-path]` - Full path to a custom config file. _original installer value: `/custom-config=`_
 
-For more details on _original installer values_ : https://docs.saltstack.com/en/3000/topics/installation/windows.html#silent-installer-options
+For more details on _original installer values_ : https://docs.saltstack.com/en/3001/topics/installation/windows.html#silent-installer-options
 
 To pass parameters, use `--params "''"` (e.g. `choco install salt-minion [other options] --params="'/Master:myMaster /Python2'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
     </description>
-    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3000.3.html</releaseNotes>
+    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3001.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

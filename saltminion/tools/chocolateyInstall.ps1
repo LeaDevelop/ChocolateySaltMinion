@@ -1,16 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-# Python 2
-$url64_py2      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.3-Py2-AMD64-Setup.exe'
-$checksum64_py2 = '2E6D59324550C91B7EE335668A8FC116'
-$url_py2        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.3-Py2-x86-Setup.exe'
-$checksum_py2   = '685A1BB21C5B4C707967FDABBFD54440'
-
 # Python 3
-$url64_py3      = 'https://repo.saltstack.com/windows/Salt-Minion-3000.3-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '31BB23EDD89AC6D5E86E321586880030'
-$url_py3        = 'https://repo.saltstack.com/windows/Salt-Minion-3000.3-Py3-x86-Setup.exe'
-$checksum_py3   = '77DC2511669A85809A53E73BE9AD02C5'
+$url64_py3      = 'https://repo.saltstack.com/windows/Salt-Minion-3001-Py3-AMD64-Setup.exe'
+$checksum64_py3 = 'A1FA88D078C2FCF1A8D4E590D2D63F88'
+$url_py3        = 'https://repo.saltstack.com/windows/Salt-Minion-3001-Py3-x86-Setup.exe'
+$checksum_py3   = 'EF433F11231AE2946D96F73E8079978B'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
@@ -33,14 +27,6 @@ $packageArgs = @{
 
 
 $packageParameters = Get-PackageParameters
-
-if ($packageParameters['Python2'] -eq 'true') {
-  $packageArgs['url']         = $url_py2
-  $packageArgs['checksum']    = $checksum_py2
-
-  $packageArgs['url64bit']    = $url64_py2
-  $packageArgs['checksum64']  = $checksum64_py2
-}
 
 if ($packageParameters['Master']) {
   $Master = $packageParameters['Master']
