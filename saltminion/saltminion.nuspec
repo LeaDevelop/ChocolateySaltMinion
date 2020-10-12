@@ -3,7 +3,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>saltminion</id>
-    <version>3001.0.0</version>
+    <version>3001.1.0</version>
     <owners>Derek Murawsky, Alex Clay, espoelstra, ArthurREGNARD</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
@@ -45,7 +45,7 @@ For more details on _original installer values_ : https://docs.saltstack.com/en/
 To pass parameters, use `--params "''"` (e.g. `choco install salt-minion [other options] --params="'/Master:myMaster /Python2'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
     </description>
-    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3001.html</releaseNotes>
+    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3001.1.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
