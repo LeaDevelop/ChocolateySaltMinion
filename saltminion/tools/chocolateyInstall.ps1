@@ -2,9 +2,9 @@
 
 # Python 3
 $url64_py3      = 'https://repo.saltproject.io/windows/Salt-Minion-3003.1-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '74D2BBAB41B9482D6004199F8EFED8A3'
+$checksum64_py3 = '3A0BD85221B52FBA9B704D79DB79075C'
 $url_py3        = 'https://repo.saltproject.io/windows/Salt-Minion-3003.1-Py3-x86-Setup.exe'
-$checksum_py3   = '01ECCA02E4CB282312C2A675AA30EAD5'
+$checksum_py3   = '9BE64DBAEC90D56472D1A380DCDE64ED'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
