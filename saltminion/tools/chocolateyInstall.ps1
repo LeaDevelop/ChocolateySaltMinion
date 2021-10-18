@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 # Python 3
-$url64_py3      = 'https://repo.saltproject.io/windows/Salt-Minion-3003.3-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '9045E8DCBF20FAC6550A347197BB5062'
-$url_py3        = 'https://repo.saltproject.io/windows/Salt-Minion-3003.3-Py3-x86-Setup.exe'
-$checksum_py3   = 'A3D3BE27761012A1F053D23F1D25EBF8'
+$url64_py3      = 'https://repo.saltproject.io/windows/Salt-Minion-3004-Py3-AMD64-Setup.exe'
+$checksum64_py3 = 'CC3D7A8FF7D8BABF5775B70568AB8C4D'
+$url_py3        = 'https://repo.saltproject.io/windows/Salt-Minion-3004-Py3-x86-Setup.exe'
+$checksum_py3   = '8842330ACD8FB3C63CD61C07591FFB9C'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
