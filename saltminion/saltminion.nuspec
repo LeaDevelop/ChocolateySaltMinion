@@ -3,7 +3,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>saltminion</id>
-    <version>3006.7.0</version>
+    <version>3007.0.0</version>
     <owners>Derek Murawsky, Alex Clay, espoelstra, ArthurREGNARD</owners>
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
