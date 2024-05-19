@@ -15,7 +15,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/saltstack/salt</projectSourceUrl>
     <packageSourceUrl>https://github.com/barkingfoodog/ChocolateySaltMinion</packageSourceUrl>
-    <docsUrl>https://docs.saltstack.com/en/3001/contents.html</docsUrl>
+    <docsUrl>https://docs.saltproject.io/en/3006/contents.html</docsUrl>
     <mailingListUrl>https://groups.google.com/forum/#!forum/salt-users</mailingListUrl>
     <bugTrackerUrl>https://github.com/saltstack/salt/issues</bugTrackerUrl>
     <tags>salt-minion saltminion salt saltstack minion admin</tags>
@@ -45,7 +45,7 @@ For more details on _original installer values_ : https://docs.saltstack.com/en/
 To pass parameters, use `--params "''"` (e.g. `choco install saltminion [other options] --params="'/Master:myMaster /Python2'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
     </description>
-    <releaseNotes>https://docs.saltstack.com/en/latest/topics/releases/3001.1.html</releaseNotes>
+    <releaseNotes>https://docs.saltproject.io/en/3006/topics/releases/3006.8.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
