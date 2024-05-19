@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 # Python 3
-$url64_py3      = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.7/Salt-Minion-3006.7-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '13BA9986657F063D4D521A4798A4FABF5594B2FFAE3BE57DB4D7C025A4ECA1A324E219068E33829181D734BA9957257D178A9488FBE93C8D48487966A0BAB11C'
-$url_py3        = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.7/Salt-Minion-3006.7-Py3-x86-Setup.exe'
-$checksum_py3   = 'D6A0DD688CD90C010656CD94B2C091D79A6E72221F28CE52E5592A34248D256C331F04A181DF6040E5EC074B2C6E9AEFF28608E95F0F1AB6F1BEA729C4BB3F10'
+$url64_py3      = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.8/Salt-Minion-3006.8-Py3-AMD64-Setup.exe'
+$checksum64_py3 = 'ee0954f0537423bd5b909db998bd656bb31f527c902f8b138d7b04cb967282a291d4f57644fb6284d145ae96cc48a5498b75eb638a9b4eed05a47acf1531c9c2'
+$url_py3        = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.8/Salt-Minion-3006.8-Py3-x86-Setup.exe'
+$checksum_py3   = '8c1cc885c1d58754c07d1a6cd08821ea298706e41c23bbf85fee2565fb2bf396af2f3ef04850476757b44cf3280166b71c3000ae7bc61645094280637619e77b'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
