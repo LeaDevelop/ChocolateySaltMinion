@@ -40,7 +40,7 @@ The following package parameters can be set:
   * `/DefaultConfig`              - Present to overwrite the existing config file with the default. _original installer value: `/default-config`_
   * `/CustomConfig:[config-path]` - Full path to a custom config file. _original installer value: `/custom-config=`_
 
-For more details on _original installer values_ : https://docs.saltstack.com/en/3001/topics/installation/windows.html#silent-installer-options
+For more details on _original installer values_ : https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/windows.html#windows-nullsoft-exe-install-options
 
 To pass parameters, use `--params "''"` (e.g. `choco install saltminion [other options] --params="'/Master:myMaster /Python2'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
