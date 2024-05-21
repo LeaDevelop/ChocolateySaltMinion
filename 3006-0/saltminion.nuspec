@@ -8,8 +8,8 @@
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>Salt Minion (Install)</title>
-    <authors>SaltStack</authors>
-    <projectUrl>https://www.saltstack.com/</projectUrl>
+    <authors>Salt Project</authors>
+    <projectUrl>http://www.saltproject.io/</projectUrl>
     <iconUrl>https://saltproject.io/images/logo.svg</iconUrl>
     <licenseUrl>https://github.com/saltstack/salt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
