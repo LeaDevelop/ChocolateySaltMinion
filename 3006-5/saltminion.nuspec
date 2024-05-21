@@ -8,14 +8,14 @@
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>Salt Minion (Install)</title>
-    <authors>SaltStack</authors>
-    <projectUrl>https://www.saltstack.com/</projectUrl>
+    <authors>Salt Project</authors>
+    <projectUrl>https://www.saltproject.io</projectUrl>
     <iconUrl>https://saltproject.io/images/logo.svg</iconUrl>
     <licenseUrl>https://github.com/saltstack/salt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/saltstack/salt</projectSourceUrl>
     <packageSourceUrl>https://github.com/barkingfoodog/ChocolateySaltMinion</packageSourceUrl>
-    <docsUrl>https://docs.saltstack.com/en/3006/contents.html</docsUrl>
+    <docsUrl>https://docs.saltproject.io/en/3006/contents.html</docsUrl>
     <mailingListUrl>https://groups.google.com/forum/#!forum/salt-users</mailingListUrl>
     <bugTrackerUrl>https://github.com/saltstack/salt/issues</bugTrackerUrl>
     <tags>salt-minion saltminion salt saltstack minion admin</tags>
