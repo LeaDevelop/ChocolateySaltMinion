@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 # Python 3
-$url64_py3      = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.9/Salt-Minion-3006.9-Py3-AMD64-Setup.exe'
-$checksum64_py3 = '0056c64fd9fcb519d2dd30d1d0d43f3e03b3e5051fd88fbf0a987ae6225cc461df0a36207eea9ee59edc9bad2ce5e65cfdbc9ad7d78a582493af9b5f2643238a'
-$url_py3        = 'https://repo.saltproject.io/salt/py3/windows/minor/3006.9/Salt-Minion-3006.9-Py3-x86-Setup.exe'
-$checksum_py3   = 'f2e5f8c4f1d9c9993be643dd62e972352919de0e25d9c45efa96e7abc22fa323f61eed285939008c1972ad0a6f4b02ace6d7e4435a6d0127346d8101af4aadca'
+$url64_py3      = 'https://packages.broadcom.com/artifactory/saltproject-generic/windows/3006.9/Salt-Minion-3006.9-Py3-AMD64-Setup.exe'
+$checksum64_py3 = '2f90752b832d7f7f9bddfc2748a43ca7caa639f8f8e9b7841fff53b16c33bb81'
+$url_py3        = 'https://packages.broadcom.com/artifactory/saltproject-generic/windows/3006.9/Salt-Minion-3006.9-Py3-x86-Setup.exe'
+$checksum_py3   = 'e149bdf176d817b92e55c9089f3884d8cf03f66b65c71fefbeb2122e199a6f97'
 
 $packageArgs = @{
   packageName     = 'salt-minion'
@@ -15,11 +15,11 @@ $packageArgs = @{
 
   url             = $url_py3
   checksum        = $checksum_py3
-  checksumType    = 'sha512'
+  checksumType    = 'sha256'
 
   url64bit        = $url64_py3
   checksum64      = $checksum64_py3
-  checksumType64  = 'sha512'
+  checksumType64  = 'sha256'
 
   silentArgs    = "/S"
   validExitCodes= @(0, 3010, 1641)
